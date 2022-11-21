@@ -34,8 +34,10 @@ class Jobs(models.Model):
     return self.title
 
 class Advertisements(models.Model):
+   def nameFile(instance, filename):
+    return '/'.join(['images', str(instance.title), filename])
    title=models.CharField(max_length=50) 
-   image=models.ImageField()
+   image=models.ImageField(upload_to=nameFile,blank=True)
    content=models.TextField(max_length=100)
 
    def __str__(self):
