@@ -40,8 +40,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'app',
     'subapp',
+    'accounts',
     'rest_framework',
      'corsheaders',
+      'knox',
+      'django_rest_passwordreset',
 ]
 
 MIDDLEWARE = [
@@ -63,6 +66,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         # 'DIRS': [os.path.join(BASE_DIR,'reactapp/build')],
          'DIRS': [os.path.join(BASE_DIR,'React-Routing/build')],
+        #    'DIRS': [os.path.join(BASE_DIR,'cpanel/build')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -118,7 +122,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
@@ -142,3 +145,25 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # STATICFILES_DIRS=[os.path.join(BASE_DIR,'reactapp/build/static')]
 STATICFILES_DIRS=[os.path.join(BASE_DIR,'React-Routing/build/static')]
+# STATICFILES_DIRS=[os.path.join(BASE_DIR,'cpanel/build/static')]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        # 'rest_framework.authentication.BasicAuthentication',
+        # 'rest_framework.authentication.SessionAuthentication',
+        'knox.auth.TokenAuthentication',
+    ]
+}
+
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'ahmad.hassan@mezino.com'
+EMAIL_HOST_PASSWORD = 'ahmad@hassan123*'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'CodingWithMitch Team <noreply@codingwithmitch.com>'
+
+# EMAIL_HOST = 'smtp.mailtrap.io'
+# EMAIL_HOST_USER = '6fc5cda97574cd'
+# EMAIL_HOST_PASSWORD = '5c42bc67b34eb6'
+# EMAIL_PORT = '2525'

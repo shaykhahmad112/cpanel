@@ -1,0 +1,50 @@
+.main-container{
+margin-top: 90px;
+    /* margin-left: 220px; */
+}
+@media only screen and (max-width: 1500px) {
+    .main-container {
+        margin-top: 70px;
+        margin: left 50px;
+    /* background: red; */
+    }
+  }
+  h1{
+    font-weight: 200;
+  }
+  h2{
+    font-weight: 350;
+  }
+
+  .change-pass{
+    width: 250px;
+  }
+  .language-change-div{
+
+  background-color: skyblue;
+  height: 40px;
+  border: 1px solid blue;
+margin-left: 1px;
+  }
+  .pass-andsecurity-div{
+
+    background-color: skyblue;
+    height: 40px;
+    border: 1px solid blue;
+  margin-left: 1px;
+    }
+
+    input{
+      width: 15px;
+      height: 15px;
+      /* display: grid;
+      justify-content: center; */
+    }
+    label{
+      margin-left: 10px;
+    }
+    input:focus {
+      /* outline: none; */
+      box-shadow: none!important;
+      /*Sometime the blue border you see is from the box-shadow and removing box-shadow will remove the border*/
+    }

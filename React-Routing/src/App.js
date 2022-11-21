@@ -7,6 +7,7 @@ import Contact from "./components/pages/Contact";
 import Navbar from "./components/layout/Navbar";
 import NotFound from "./components/pages/NotFound";
 import VideoRecoder from "./components/video_Recordings/video1";
+import ChangePassword from "./components/pages/changepassword";
 
 import {
   BrowserRouter as Router,
@@ -32,6 +33,7 @@ function App(props) {
           <Route exact path="/users/add" component={AddUser} />
           <Route exact path="/users/edit/:id" component={EditUser} />
           <Route exact path="/users/:id" component={User} />
+          <Route exact path="/reset/:token" component={ChangePassword} />
           <Route component={NotFound} />
         </Switch>
       </div>

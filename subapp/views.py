@@ -1,13 +1,15 @@
 from django.shortcuts import render
 
 # Create your views here.
-from .models import Book, Users
-from .serializers import BookSerializer, UsersSerializer
+from .models import Book, Users, Advertisements, Jobs
+from .serializers import BookSerializer, UsersSerializer, JobsSerializer, AdvertisementSerializer
 from django.shortcuts import render
 from rest_framework import generics
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import status
+from rest_framework import filters
+
 
 
 class Booklist(generics.ListCreateAPIView):
@@ -22,21 +24,6 @@ class Updatebook(generics.RetrieveUpdateAPIView):
       queryset=Book
       serializer_class=BookSerializer
 
-# # @api_view(['DELETE'])
-# def Deletebook(request, pk):
-# #    if request.method == 'DELETE':    
-#     emp = Book.objects.get(id=pk)
-#     emp.delete()
-#     return Response(status=status.HTTP_204_NO_CONTENT)
-    
-
-# SomeModel.objects.filter(id=id).delete()
-# class Deletebook(generics.RetrieveUpdateDestroyAPIView):      
-# def  Deletebook(self, request, *args, **kwargs):
-#         instance = self.get_object()
-#         self.perform_destroy(instance)
-#         return Response(status=status.HTTP_204_NO_CONTENT)
-
 class UserList(generics.ListCreateAPIView):
       queryset= Users.objects.all()
       serializer_class=UsersSerializer
@@ -48,3 +35,28 @@ class UserDetail(generics.RetrieveUpdateDestroyAPIView):
 class UpdateUser(generics.RetrieveUpdateAPIView):
       queryset=Users
       serializer_class=UsersSerializer
+
+# Jobs
+class Job(generics.ListAPIView):
+#     serializer_class = JobsSerializer
+
+#     def get_queryset(self):
+#         """
+#         Optionally restricts the returned purchases to a given user,
+#         by filtering against a `username` query parameter in the URL.
+#         """
+#         queryset = Jobs.objects.all()
+#         title = self.request.query_params.get('title')
+#         if title is not None:
+#             queryset = queryset.filter(Jobs__title=title)
+#         return queryset
+# class UserListView(generics.ListAPIView):
+      queryset = Jobs.objects.all()
+      serializer_class = JobsSerializer
+      filter_backends = [filters.SearchFilter]
+      search_fields = ['title']
+
+        # Advertisement
+class Advertisement(generics.ListCreateAPIView):
+      queryset= Advertisements.objects.all()
+      serializer_class=AdvertisementSerializer

@@ -19,7 +19,24 @@ class Users(models.Model):
    email=models.TextField(max_length=25, null=True)
    phone=models.IntegerField(max_length=15, null=True)
    
-  
-
    def __str__(self):
     return self.name
+
+class Jobs(models.Model):
+   title=models.CharField(max_length=50) 
+   jobe_type=models.CharField(max_length=50)
+   jobe_category=models.TextField(max_length=25)
+   location=models.TextField(max_length=70)
+   description=models.TextField(max_length=100)
+   salary_posted=models.IntegerField(max_length=15)
+   
+   def __str__(self):
+    return self.title
+
+class Advertisements(models.Model):
+   title=models.CharField(max_length=50) 
+   image=models.ImageField()
+   content=models.TextField(max_length=100)
+
+   def __str__(self):
+    return self.title
