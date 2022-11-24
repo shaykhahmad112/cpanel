@@ -5,7 +5,7 @@ from django.db import models
 
 # books Table
 class Book(models.Model):
-   title=models.CharField(max_length=50, null=True) 
+   title=models.CharField(max_length=50) 
    author=models.CharField(max_length=50, null=True)
    publisher=models.TextField(max_length=25, null=True)
    isbno=models.IntegerField(max_length=25, null=True)
