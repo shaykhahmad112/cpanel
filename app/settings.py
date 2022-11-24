@@ -26,7 +26,9 @@ SECRET_KEY = 'django-insecure-fb59c7&mv__4xlc(z((l3e^2brd8#_a(9+ho)=cij$2k0v1kw@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['cpanel-backend.herokuapp.com']
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+    'cpanel-backend.herokuapp.com']
 
 
 # Application definition
