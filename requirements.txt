@@ -20,7 +20,6 @@ django-rest-knox==4.2.0
 django-rest-passwordreset==1.3.0
 djangorestframework==3.12.4
 drf-yasg==1.21.4
-duplicity==0.8.21
 fasteners==0.14.1
 filelock==3.6.0
 future==0.18.2
