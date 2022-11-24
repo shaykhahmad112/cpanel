@@ -6,9 +6,11 @@ from .serializers import BookSerializer, UsersSerializer, JobsSerializer, Advert
 from django.shortcuts import render
 from rest_framework import generics
 from rest_framework.response import Response
+from rest_framework.permissions import IsAuthenticated   
 from rest_framework.decorators import api_view
 from rest_framework import status
 from rest_framework import filters
+
 
 
 
@@ -38,6 +40,7 @@ class UpdateUser(generics.RetrieveUpdateAPIView):
 
 # Jobs
 class Job(generics.ListAPIView):
+      permission_classes=[IsAuthenticated]
       queryset = Jobs.objects.all()
       serializer_class = JobsSerializer
       filter_backends = [filters.SearchFilter]
@@ -45,5 +48,6 @@ class Job(generics.ListAPIView):
 
         # Advertisement
 class Advertisement(generics.ListCreateAPIView):
+      permission_classes=[IsAuthenticated]
       queryset= Advertisements.objects.all()
       serializer_class=AdvertisementSerializer
