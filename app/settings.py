@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-fb59c7&mv__4xlc(z((l3e^2brd8#_a(9+ho)=cij$2k0v1kw@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['cpanel-backend.herokuapp.com']
 
 
 # Application definition
@@ -48,6 +48,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -143,7 +144,8 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # STATICFILES_DIRS=[os.path.join(BASE_DIR,'reactapp/build/static')]
-STATICFILES_DIRS=[os.path.join(BASE_DIR,'React-Routing/build/static')]
+# STATICFILES_DIRS=[os.path.join(BASE_DIR,'React-Routing/build/static')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # STATICFILES_DIRS=[os.path.join(BASE_DIR,'cpanel/build/static')]
 
 REST_FRAMEWORK = {
