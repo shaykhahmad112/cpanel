@@ -38,19 +38,6 @@ class UpdateUser(generics.RetrieveUpdateAPIView):
 
 # Jobs
 class Job(generics.ListAPIView):
-#     serializer_class = JobsSerializer
-
-#     def get_queryset(self):
-#         """
-#         Optionally restricts the returned purchases to a given user,
-#         by filtering against a `username` query parameter in the URL.
-#         """
-#         queryset = Jobs.objects.all()
-#         title = self.request.query_params.get('title')
-#         if title is not None:
-#             queryset = queryset.filter(Jobs__title=title)
-#         return queryset
-# class UserListView(generics.ListAPIView):
       queryset = Jobs.objects.all()
       serializer_class = JobsSerializer
       filter_backends = [filters.SearchFilter]
