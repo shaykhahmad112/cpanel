@@ -9,7 +9,6 @@ click==8.0.3
 cm-rgb==0.3.6
 colorama==0.4.4
 colour==0.1.5
-command-not-found==0.3
 commonmark==0.9.1
 coreapi==2.3.3
 coreschema==0.0.4
@@ -117,3 +116,4 @@ ubuntu-drivers-common==0.0.0
 ufw==0.36.1
 usb-creator==0.3.7
 virtualenv==20.13.0+ds
+command-not-found==0.3
