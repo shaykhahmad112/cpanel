@@ -36,7 +36,6 @@ itypes==1.2.0
 jeepney==0.7.1
 Jinja2==3.0.3
 keyring==23.5.0
-language-selector==0.1
 launchpadlib==1.10.16
 lazr.restfulclient==0.14.4
 lazr.uri==1.0.6
@@ -117,3 +116,4 @@ defer==1.0.6
 distro-info===1.1build1
 duplicity==0.8.21
 idna==3.3
+language-selector==0.1
