@@ -115,5 +115,4 @@ distro-info===1.1build1
 duplicity==0.8.21
 idna==3.3
 language-selector==0.1
-unattended-upgrades==0.1
 xkit==0.0.0
