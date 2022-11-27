@@ -51,6 +51,7 @@ netifaces==0.11.0
 numpy==1.23.5
 oauthlib==3.2.0
 olefile==0.46
+PyGObject==3.42.1
 packaging==21.3
 pangocairocffi==0.4.0
 pangocffi==0.8.0
